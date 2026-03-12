@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    // keep base settings minimal but enable strictness for references
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}

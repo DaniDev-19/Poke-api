@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-purple: #8B5CF6;
+  --color-orange: #F97316;
+  --color-dark: #202020;
+  --color-text: #fffa
+}
+
+body{
+  background: var(--color-dark);
+  color: var(--color-text);
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  text-align: center;
+}
