@@ -33,7 +33,8 @@ const PokemonCard = ({ name, url }: PokemonCardProps) => {
     <div className={`${bgColor} text-white p-2 rounded-3xl shadow-md group`}>
       <img
         src={pokemon.sprites.front_default}
-        alt={pokemon.name}
+        alt={`Imagen frontal de ${pokemon.name}, un Pokémon de tipo ${pokemon.types.map((t) => t.type.name).join(' y ')}`}
+        loading="lazy"
         className="w-34 h-34 mx-auto transform transition-transform duration-300 group-hover:scale-110 group-hover:animate-bounce cursor-pointer"
       />
       <h3 className="text-center capitalize font-bold text-2xl text-white">

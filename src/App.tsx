@@ -1,18 +1,18 @@
 import { Routes, BrowserRouter, Route } from "react-router-dom";
+import { HelmetProvider } from "./utils/helmet";
 import Pokelist from './pages/Pokelist';
 import PokemonDetail from "./pages/PokemonDetail";
 import Error from './pages/Error';
 
 function App() {
-
   return (
-    <>
+    <HelmetProvider>
       <BrowserRouter>
         <Routes>
           <Route
             path="/"
             element={
-              <Pokelist/>
+              <Pokelist />
             }
           />
           <Route
@@ -22,14 +22,15 @@ function App() {
             }
           />
           <Route
-          path="*"
-          element={
-            <Error/>
-          }/>
+            path="*"
+            element={
+              <Error />
+            }
+          />
         </Routes>
       </BrowserRouter>
-    </>
-  )
+    </HelmetProvider>
+  );
 }
 
 export default App
