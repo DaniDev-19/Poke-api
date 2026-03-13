@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename="PokeApi">
+      <BrowserRouter>
         <Routes>
           <Route
             path="/"

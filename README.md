@@ -1,73 +1,98 @@
-# React + TypeScript + Vite
+# PokeAPI Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación web frontend construida con React y TypeScript para explorar y buscar Pokémon utilizando la API de PokeAPI. Incluye funcionalidades como listado de Pokémon, búsqueda, paginación y detalles individuales de cada Pokémon.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Listado de Pokémon**: Muestra una lista paginada de Pokémon con tarjetas que incluyen imagen, nombre y tipos.
+- **Búsqueda**: Barra de búsqueda para filtrar Pokémon por nombre.
+- **Paginación**: Navegación entre páginas para explorar más Pokémon.
+- **Detalles de Pokémon**: Página dedicada con información detallada de un Pokémon seleccionado (estadísticas, habilidades, etc.).
+- **Responsive**: Diseño adaptativo usando TailwindCSS.
+- **Enrutamiento**: Navegación entre páginas con React Router.
 
-## React Compiler
+## Tecnologías Utilizadas
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **React 19**: Biblioteca para la interfaz de usuario.
+- **TypeScript**: Para tipado estático.
+- **Vite**: Herramienta de construcción rápida.
+- **TailwindCSS**: Framework CSS para estilos.
+- **Axios**: Para llamadas a la API.
+- **React Router DOM**: Para enrutamiento del lado cliente.
+- **ESLint**: Para linting del código.
 
-## Expanding the ESLint configuration
+## Instalación y Uso
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Clona el repositorio**:
+   ```bash
+   git clone <URL-del-repositorio>
+   cd poke-api/frontend
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. **Instala las dependencias**:
+   ```bash
+   npm install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. **Ejecuta en modo desarrollo**:
+   ```bash
+   npm run dev
+   ```
+   Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+4. **Construye para producción**:
+   ```bash
+   npm run build
+   ```
+
+5. **Vista previa de producción**:
+   ```bash
+   npm run preview
+   ```
+
+## Despliegue
+
+Este proyecto está configurado para desplegarse en Vercel. Asegúrate de tener el archivo `vercel.json` en la raíz del proyecto (carpeta `frontend/`) con la configuración adecuada para Vite y el base path `/PokeApi`.
+
+- Conecta tu repositorio a Vercel y despliega automáticamente.
+- Para más detalles, consulta la documentación de Vercel.
+
+## Estructura del Proyecto
+
+```
+frontend/
+├── public/                 # Archivos estáticos
+├── src/
+│   ├── components/         # Componentes reutilizables (PokemonCard, PokemonList, etc.)
+│   ├── pages/              # Páginas principales (Pokelist, PokemonDetail, etc.)
+│   ├── services/           # Servicios para API (pokemonApi.ts)
+│   ├── types/              # Definiciones de tipos TypeScript
+│   ├── utils/              # Utilidades (BaseUrl, typePokemon)
+│   ├── App.tsx             # Componente principal
+│   └── main.tsx            # Punto de entrada
+├── package.json            # Dependencias y scripts
+├── vite.config.ts          # Configuración de Vite
+└── vercel.json             # Configuración para Vercel
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## API Utilizada
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- [PokeAPI](https://pokeapi.co/): API gratuita para datos de Pokémon.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Contribución
+
+Si quieres contribuir:
+1. Haz un fork del repositorio.
+2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`).
+3. Haz commit de tus cambios (`git commit -am 'Agrega nueva funcionalidad'`).
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`).
+5. Abre un Pull Request.
+
+## Licencia
+
+Este proyecto es de código abierto y está bajo la Licencia MIT.
+
+## Autor DaniDev
+---
+
+Para más información sobre Vite, visita [vite.dev](https://vite.dev/).
